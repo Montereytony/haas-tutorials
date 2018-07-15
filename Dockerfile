@@ -12,7 +12,7 @@ FROM montereytony/ugba147
 USER root
 RUN ln -s /usr/lib/git-core/* /usr/local/bin
 RUN /opt/conda/bin/pip install --upgrade pip
-RUN pip3 install --upgrade datascience autopep8 isort oauthenticator nbgitpuller nbinteract
+RUN pip3 install --upgrade datascience autopep8 oauthenticator nbgitpuller nbinteract
 RUN conda update -n base conda
 RUN conda install -c conda-forge jupyter_contrib_nbextensions
 RUN conda install -c conda-forge jupyter_nbextensions_configurator
@@ -23,8 +23,8 @@ RUN jupyter nbextension enable  --py widgetsnbextension --sys-prefix
 #RUN pip3 install oauthenticator
 #
 #RUN pip3 install nbgitpuller
-RUN jupyter serverextension enable --sys-prefix nbgitpuller
-RUN jupyter serverextension enable --py nbgitpuller --sys-prefix
+RUN jupyter serverextension enable --sys-prefix      nbgitpuller
+#RUN jupyter serverextension enable --sys-prefix --py nbgitpuller
 #
 #
 #RUN pip3 install git+https://github.com/data-8/nbinteract.git
