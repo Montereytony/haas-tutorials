@@ -12,7 +12,7 @@ FROM montereytony/ugba147
 USER root
 RUN ln -s /usr/lib/git-core/* /usr/local/bin
 RUN /opt/conda/bin/pip install --upgrade pip
-RUN pip3 install --upgrade datascience autopep8 isort oauthenticator nbgitpuller
+RUN pip3 install --upgrade datascience autopep8 isort oauthenticator nbgitpuller nbinteract
 RUN conda update -n base conda
 RUN conda install -c conda-forge jupyter_contrib_nbextensions
 RUN conda install -c conda-forge jupyter_nbextensions_configurator
@@ -33,7 +33,7 @@ RUN jupyter serverextension enable --py nbgitpuller --sys-prefix
 #
 #
 #
-RUN jupyter nbextension install --py nbinteract
+#RUN jupyter nbextension install --py nbinteract
 #RUN jupyter nbextensions_configurator enable
 USER jovyan
 RUN jupyter nbextensions_configurator enable
