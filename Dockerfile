@@ -33,7 +33,7 @@ RUN jupyter serverextension enable --py nbgitpuller --sys-prefix
 #
 #
 #
-#RUN jupyter nbextension install --py nbinteract
+RUN jupyter nbextension install --py nbinteract
 #RUN jupyter nbextensions_configurator enable
 USER jovyan
 RUN jupyter nbextensions_configurator enable
