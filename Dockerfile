@@ -13,7 +13,7 @@ USER root
 RUN ln -s /usr/lib/git-core/* /usr/local/bin
 RUN conda update -n base conda
 RUN /opt/conda/bin/pip install --upgrade pip
-RUN pip3 install --upgrade datascience oauthenticator nbgitpuller nbinteract
+RUN pip3 install --upgrade oauthenticator nbgitpuller nbinteract
 RUN conda install -c conda-forge jupyter_contrib_nbextensions jupyter_nbextensions_configurator
 RUN jupyter nbextension install --py widgetsnbextension --sys-prefix
 RUN jupyter nbextension enable --py jupyter_contrib_nbextensions --sys-prefix
