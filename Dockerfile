@@ -16,8 +16,8 @@ RUN /opt/conda/bin/pip install --upgrade pip
 RUN pip3 install --upgrade oauthenticator nbgitpuller nbinteract nbconvert
 RUN conda install -c conda-forge jupyter_contrib_nbextensions jupyter_nbextensions_configurator
 RUN jupyter nbextension install --py widgetsnbextension --sys-prefix
-#RUN jupyter nbextension enable --py jupyter_contrib_nbextensions --sys-prefix
-#RUN jupyter nbextension enable  --py widgetsnbextension --sys-prefix
-RUN jupyter serverextension enable --sys-prefix      nbgitpuller
-USER jovyan
+RUN jupyter nbextension enable  --py widgetsnbextension --sys-prefix
+RUN jupyter serverextension enable --sys-prefix      nbgitpuller nbinteract nbconvert
 RUN jupyter nbextensions_configurator enable
+RUN jupyter nbextension enable --py jupyter_contrib_nbextensions --sys-prefix
+USER jovyan
