@@ -19,5 +19,7 @@ RUN jupyter nbextension install --py widgetsnbextension --sys-prefix
 RUN jupyter nbextension enable  --py widgetsnbextension --sys-prefix
 RUN jupyter serverextension enable --sys-prefix      nbgitpuller nbinteract nbconvert
 RUN jupyter nbextensions_configurator enable
-RUN jupyter nbextension enable --py jupyter_contrib_nbextensions --sys-prefix
+RUN jupyter nbextension     disable --py jupyter_contrib_nbextensions --sys-prefix
+RUN jupyter serverextension disable --sys-prefix      nbgitpuller nbinteract nbconvert
+RUN jupyter nbextension     disable  --py widgetsnbextension --sys-prefix
 USER jovyan
